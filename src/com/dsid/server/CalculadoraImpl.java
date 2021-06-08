@@ -1,14 +1,19 @@
 package com.dsid.server;
 
 import com.dsid.shared.Calculadora;
-import com.dsid.shared.LuckyNumber;
 
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 
-public class Main {
+public class CalculadoraImpl implements Calculadora {
+
+    @Override
+    public long add(long v1, long v2) throws RemoteException {
+        return v1+v2;
+    }
+
     public static void main(String[] args) throws RemoteException {
         Registry registry = LocateRegistry.createRegistry(6666);
 
@@ -17,11 +22,7 @@ public class Main {
 
         registry.rebind("calc", calculadora);
 
-        LuckyNumberImpl luckyNumberImpl = new LuckyNumberImpl();
-        LuckyNumber luckyNumber = (LuckyNumber) UnicastRemoteObject.exportObject(luckyNumberImpl, 0);
+        System.out.println("Der Server ist lauft..");
 
-        registry.rebind("lucky", luckyNumber);
-
-        System.out.println("Server is runnig");
     }
 }
