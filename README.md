@@ -9,6 +9,8 @@ https://www.youtube.com/watch?v=tLtTWY6JqNo&t=154s&ab_channel=Jo%C3%A3oCastelli
 https://www.youtube.com/watch?v=GwC3iaoeOwo&ab_channel=DTProjects
 
 
-shared folder: Interfaces Remotas
-server folder: Classes Servidor
-client folder: Classes Cliente
+shared folder: Interfaces Remotas;
+
+server folder: Classes Servidor;
+
+client folder: Classes Cliente;
